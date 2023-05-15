@@ -7,7 +7,7 @@ import FormatPrice from "../Helpers/FormatPrice";
 const Cart = () => {
   const { cart, clearCart, total_price, shipping_amount } = useCartContext();
 
-  if (cart.length === 0) {
+  if (cart == 0) {
     return (
       <div style={{textAlign:'center'}}>
         <img src='empty-cart.png' className='img-fluid cart-img'/>
