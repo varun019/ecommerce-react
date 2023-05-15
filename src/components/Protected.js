@@ -6,7 +6,7 @@ const Protected = (props) => {
     const { Component } = props;
     let login = JSON.parse(localStorage.getItem('register_user'));
     useEffect(() => {
-        const isLogged =  login.find((text)=> text.isLogin === true);
+        const isLogged =  login.find((text)=> text.isLogin == true);
         if (!isLogged) {
             navigate('/login');
         }
