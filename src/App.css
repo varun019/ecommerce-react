@@ -1,0 +1,13 @@
+body.sidebar-open{
+overflow:hidden;
+}
+
+/* @media (min-width: 768px) and (max-width: 1024px) {
+    .btn-reg{
+      width: 40vw;
+    }
+  } */
+
+.toast-message{
+  font-size: medium;
+}  
