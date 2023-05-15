@@ -27,7 +27,7 @@ const Cart = () => {
         </div>
         <hr />
         <div className="cart-item">
-          {cart.map((curElem) => {
+          {cart && cart.map((curElem) => {
             return <CartItem key={curElem.id} {...curElem} />;
           })}
         </div>
