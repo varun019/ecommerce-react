@@ -35,8 +35,8 @@ const Register = (props)=>{
         newData
       ]));
     } else {
-      localStorage.setItem('register_user', JSON.stringify([newData]));
       toast.success('Registration Successful!',{position:toast.POSITION.TOP_CENTER,className:'toast-message'})
+      localStorage.setItem('register_user', JSON.stringify([newData]));
     }
     navigate('/login')
     return;
