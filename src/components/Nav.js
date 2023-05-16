@@ -19,7 +19,7 @@ const Nav = () => {
     } else {
       setIsLogin(false);
     }
-  },[]);
+  }, [isLoggedin]);
 
 
   const handleLogout = () => {
@@ -258,7 +258,7 @@ const Nav = () => {
             >
               {isLogin
                 ? <button className='btn-log' onClick={handleLogout}>LOGOUT</button>
-                : <button className='btn-log' onClick={() => localStorage.setItem('isLoggedIn', true)}>
+                : <button className='btn-log' onClick={() => localStorage.setItem('isLoggedIn', 'true')}>
                   LOGIN
                 </button>
               }
