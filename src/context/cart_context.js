@@ -41,9 +41,9 @@ const CartProvider = ({children}) =>{
 
     
     useEffect(()=>{
-        dispatch({type:"CART_TOTAL_ITEM"});
-        dispatch({type:"CART_TOTAL_PRICE"});
-        // dispatch({type:"CART_TOTAL_ITEM_PRICE"});
+//         dispatch({type:"CART_TOTAL_ITEM"});
+//         dispatch({type:"CART_TOTAL_PRICE"});
+        dispatch({type:"CART_TOTAL_ITEM_PRICE"});
         localStorage.setItem("techKart",JSON.stringify(state.cart))
     },[state.cart])
 
