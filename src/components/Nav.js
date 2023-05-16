@@ -9,7 +9,7 @@ const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
   const { total_item } = useCartContext();
   const [isLogin, setIsLogin] = useState(false);
-    const isLoggedin = JSON.parse(localStorage.getItem('register_user'));
+    const isLoggedin = JSON.parse(localStorage.getItem('register_user')) ?? [];
   const navigate = useNavigate();
 
   useEffect(() => {
