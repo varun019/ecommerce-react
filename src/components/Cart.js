@@ -7,10 +7,10 @@ import FormatPrice from "../Helpers/FormatPrice";
 const Cart = () => {
   const { cart, clearCart, total_price, shipping_amount } = useCartContext();
 
-  if (cart == 0) {
+  if (cart.length === 0) {
     return (
       <div style={{textAlign:'center'}}>
-        <img src='empty-cart.png' className='img-fluid cart-img'/>
+        <img src='images/empty-cart.png' className='img-fluid cart-img'/>
         </div>
     )
   }
@@ -81,6 +81,8 @@ const Wrapper = styled.section`
     border: none;
     border-radius: 5px;
     background-color:#DB4839;
+    color:white;
+    font-weight: normal;
   }
   .btn-shop{
     justify-content: center;
