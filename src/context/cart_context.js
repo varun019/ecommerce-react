@@ -4,13 +4,11 @@ import reducer from "../reducer/cartReducer";
 const CartContext = createContext();
 
 const getLocalCartData = ()=>{
-    let localCartData = localStorage.getItem("techKart") 
-    if(localCartData == 0){
-        return [];
-    }else{
-        return JSON.parse(localCartData);
-    }
-}
+    console.log('localStorage.getItem("techKart") => ', localStorage.getItem("techKart"))
+    let localCartData = localStorage.getItem("techKart") === undefined ? JSON.parse(localStorage.getItem("techKart")) : [];
+    if(localCartData.length == 0){
+        console.log(localCartData,'--------');
+    }}
 const initialState = {
     cart : getLocalCartData(),
     total_item:"",
@@ -43,9 +41,9 @@ const CartProvider = ({children}) =>{
 
     
     useEffect(()=>{
-        // dispatch({type:"CART_TOTAL_ITEM"});
-        // dispatch({type:"CART_TOTAL_PRICE"});
-        dispatch({type:"CART_TOTAL_ITEM_PRICE"});
+        dispatch({type:"CART_TOTAL_ITEM"});
+        dispatch({type:"CART_TOTAL_PRICE"});
+        // dispatch({type:"CART_TOTAL_ITEM_PRICE"});
         localStorage.setItem("techKart",JSON.stringify(state.cart))
     },[state.cart])
 
