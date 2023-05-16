@@ -10,7 +10,6 @@ const Register = (props)=>{
   
   const navigate = useNavigate();
   const userData = {}
-  // localStorage.setItem('register_user','varun')
   const onSubmit = (data)=>{
     delete data.confirmPassword;
     delete data.password;
@@ -22,8 +21,6 @@ const Register = (props)=>{
     var userArray = [];
     const userInfo = localStorage.getItem('register_user')
     console.log('userInfo', userInfo);
-    // const isAvailable = localStorage.getItem('register_user');
-    // // // console.log(isAvailable);
     if(userInfo) {
       const tamp = JSON.parse(userInfo);
       const filtered = tamp.find(temp => temp.email === newData.email)
@@ -33,13 +30,13 @@ const Register = (props)=>{
       });
         return;
       }
-      toast.success('Registration Successful!',{position:toast.POSITION.TOP_CENTER,className:'toast-message'})
       localStorage.setItem('register_user', JSON.stringify([
         ...tamp,
         newData
       ]));
     } else {
       localStorage.setItem('register_user', JSON.stringify([newData]));
+      toast.success('Registration Successful!',{position:toast.POSITION.TOP_CENTER,className:'toast-message'})
     }
     navigate('/login')
     return;
@@ -141,7 +138,9 @@ const Wrapper = styled.div`
 .reg-info{
   border:none;
 }
-
+.toast-message{
+  font-size:medium;
+}
 input{
   height: 44px;
   font-size: 14px;
